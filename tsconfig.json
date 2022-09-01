@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "module": "esnext",
+        "module": "commonjs",
         "target": "esnext",
         "esModuleInterop": true,
         "moduleResolution": "node",
@@ -9,6 +9,7 @@
         "strict": true,
         "allowSyntheticDefaultImports": true,
         "removeComments": true,
+        "declaration": true
     },
     "lib": ["esnext"],
     "exclude": [

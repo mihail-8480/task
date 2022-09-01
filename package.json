@@ -1,17 +1,21 @@
 {
-  "name": "qeueue",
+  "name": "task",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.js",
+  "main": "dist/lib/index.js",
+  "types": "dist/lib/index.d.ts",
   "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "module",
-  "dependencies": {
+  "author": "Mihail Mojsoski",
+  "license": "MIT",
+  "type": "commonjs",
+  "devDependencies": {
     "typescript": "^4.8.2",
     "@types/node": "^18.7.14"
   },
   "scripts": {
-    "start": "npx tsc && node index.js"
+    "build": "npx tsc",
+    "prepare" : "npm run build",
+    "version" : "git add -A lib",
+    "postversion" : "git push && git push --tags"
   }
 }

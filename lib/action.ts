@@ -1,8 +1,8 @@
 import {CancellationToken, CancelToken} from "./cancellation-token";
 
-export type Part<T> = (resolve: (s: T) => void, reject: (s?: any) => void) => (() => void)|void
+export type Action<T> = (resolve: (s: T) => void, reject: (s?: any) => void) => (() => void)|void
 
-export function action<T>(fn: Part<T>, token: CancellationToken = CancelToken.None) {
+export function action<T>(fn: Action<T>, token: CancellationToken = CancelToken.None) {
     return new Promise<T>((resolve, reject) => {
         const cleanup = fn(resolve, reject)
         if (cleanup) {
@@ -11,7 +11,7 @@ export function action<T>(fn: Part<T>, token: CancellationToken = CancelToken.No
     })
 }
 
-function delay(ms: number) : Part<void> {
+function delay(ms: number) : Action<void> {
     return resolve => {
         const timeout = setTimeout(resolve, ms)
         return () => {
@@ -20,6 +20,6 @@ function delay(ms: number) : Part<void> {
     }
 }
 
-export const Action = {
+export const Actions = {
     delay
 }

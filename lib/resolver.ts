@@ -1,4 +1,4 @@
-import {Available} from "./available";
+import {Available} from "./utils/available";
 
 export interface Resolver<T> extends Available {
     future: Promise<T>,
