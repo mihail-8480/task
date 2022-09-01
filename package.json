@@ -1,5 +1,5 @@
 {
-  "name": "task",
+  "name": "@mojsoski/task",
   "version": "1.0.0",
   "description": "",
   "main": "dist/lib/index.js",
@@ -11,6 +11,9 @@
   "devDependencies": {
     "typescript": "^4.8.2",
     "@types/node": "^18.7.14"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "build": "npx tsc",
