@@ -22,7 +22,8 @@ import {
     createQueueContext,
     setDefaultQueueLimit,
     deferTask,
-    queueTask
+    queueTask,
+    setDefaultDebugStatus
 } from "./task-queue";
 
 import {
@@ -45,9 +46,10 @@ export {
     TaskQueueContext,
     createQueueContext,
     setDefaultQueueLimit,
+    setDefaultDebugStatus,
     deferTask,
     queueTask,
     Action,
     Actions,
-    action
+    action,
 }
